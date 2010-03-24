@@ -1,0 +1,32 @@
+dawstore - Django App Engine Simple Storage
+
+This is a simple Django App Engine App with three calls--Put, Get and Delete to store, retrieve and delete files.
+
+
+Get Started
+===========
+Check out the code.
+Create a new app engine app.
+Edit app.yaml to include your app name.
+Upload to app engine.
+Create a superuser.
+Navigate to /admin and create a new File->Account.
+
+
+UPLOAD
+======
+Uploading a file is as simple as the following:
+
+<form enctype="multipart/form-data" action="http://YOURAPP.appspot.com/file/put/PUBLIC_KEY/SECRET_KEY/" method="post">
+	<input type="file" name="myfile" />
+	<input type="submit" />
+</form>
+
+Once it is uploaded it will return a key to be used later.
+
+
+DOWNLOAD
+========
+You can use a file that's been uploaded like so (FILE_KEY was returned when you uploaded):
+
+<img src="http://YOURAPP.appspot.com/file/get/FILE_KEY" alt="" />
